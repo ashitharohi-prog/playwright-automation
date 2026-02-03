@@ -5,6 +5,6 @@ test('nutstest', async ({ page }) => {
   await page.getByRole('link', { name: 'Sign In' }).click();
   await page.getByRole('textbox', { name: 'Phone Number *' }).click();
   await page.getByRole('textbox', { name: 'Phone Number *' }).fill('7386400291');
-  await page.getByRole('button', { name: 'Send Verification Code' }).click();
+  await page.getByRole('button', { name: 'Send Verification Code1' }).click();
   await page.waitForTimeout(12000);
 });
