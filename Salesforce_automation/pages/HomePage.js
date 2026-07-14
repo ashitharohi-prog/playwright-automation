@@ -11,7 +11,6 @@ export class HomePage {
         this.salesOption = page.locator('[data-label="Sales"]');
         this.leadsTab = page.locator('[title="Leads"]');
         this.myLeadsHeading = page.getByText('My Leads');
-        this.newButton = page.getByRole('button', { name: 'New' });
     }
 
     async verifyHomePageLoaded() {
@@ -19,7 +18,8 @@ export class HomePage {
     }
 
     async clickAppLauncher() {
-        await this.appLauncher.click();
+    await this.appLauncher.click();
+    await expect(this.searchBox).toBeVisible();
     }
     async searchApp(appName) {
         await this.searchBox.fill('Sales');
@@ -39,9 +39,6 @@ export class HomePage {
     }
     async verifyLeadPageLoaded() {
         await expect(this.myLeadsHeading).toBeVisible();
-    }
-    async clickNew() {
-        await this.newButton.click();
     }
     async selectSalutation() {
     await this.clickSalutationDropdown();
